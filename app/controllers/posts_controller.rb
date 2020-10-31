@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
 
-  after_action only: [:index] { set_pagination_headers :posts }
+  after_action only: [:index] #{ set_pagination_headers: :posts }
 
   def index
     @posts = Post.page(page).per(per_page)
