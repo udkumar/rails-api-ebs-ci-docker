@@ -7,8 +7,9 @@ WORKDIR /railsapp
 
 ADD Gemfile /railsapp/Gemfile
 ADD Gemfile.lock /railsapp/Gemfile.lock
+ADD ut.sh /railsapp/ut.sh
 
 RUN gem install bundler && bundle install
 
-RUN ["chmod", "+x", "ut.sh"]
-CMD ["./entrypoint.sh"]
+#RUN ["chmod", "+x", "ut.sh"]
+ENTRYPOINT ["./ut.sh"]
