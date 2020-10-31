@@ -4,29 +4,19 @@ Create a new single-node environment for this Rails API application using docker
 
 Build and run API app on the new environment using docker & docker compose
 
-[Episode video link](https://youtu.be/4DSKgheuVns)
-
-[![Episode Video Link](https://i.ytimg.com/vi/4DSKgheuVns/hqdefault.jpg)](https://youtu.be/4DSKgheuVns)
-
-## Tested on
-
-* macOS - 10.12
-* Docker - 1.13.0
-* Docker compose - 1.10.0
-
 
 ## Run this application on local
 
 ```
-git clone https://github.com/devteds/e5-deploy-with-docker-rails-api-single-node.git
-cd e5-deploy-with-docker-rails-api-single-node
+git clone https://github.com/udkumar/rails-api-ebs-ci-docker.git
+cd rails-api-ebs-ci-docker
 # edit docker-compose.yml to set the mysql & rails ports to be mapped on host
 docker-compose build
 bin/d_rails db:migrate
 bin/d_rails db:seed
 bin/d_rails s
 # Use REST client or curl to browse the APIs
-curl http://localhost:3002/posts
+curl http://localhost:3000/posts
 ```
 
 ## Docker image
