@@ -1,0 +1,27 @@
+version: '2'
+services:
+  db:
+    image: postgres:12-alpine
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: railsapp
+      MYSQL_USER: appuser
+      MYSQL_PASSWORD: password
+    ports:
+      - "5432:5432"
+  app:
+    build: .
+    volumes:
+      - .:/railsapp/:rw
+    ports:
+      - "3002:3000"
+    depends_on:
+      - db
+    links:
+      - db
+    environment:
+      DB_USER: root
+      DB_NAME: railsapp
+      DB_PASSWORD: password
+      DB_HOST: db
