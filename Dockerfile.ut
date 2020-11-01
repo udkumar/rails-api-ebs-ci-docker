@@ -5,11 +5,11 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 RUN mkdir /railsapp
 WORKDIR /railsapp
 
-ADD Gemfile /railsapp/Gemfile
-ADD Gemfile.lock /railsapp/Gemfile.lock
+#ADD Gemfile /railsapp/Gemfile
+#ADD Gemfile.lock /railsapp/Gemfile.lock
 ADD ut.sh /railsapp/ut.sh
 
-RUN gem install bundler && bundle install
+#RUN gem install bundler && bundle install
 
 #RUN ["chmod", "+x", "ut.sh"]
 RUN chmod +x ut.sh
