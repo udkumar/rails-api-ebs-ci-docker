@@ -1,6 +1,6 @@
 
 {
-    "AWSEBDockerrunVersion": "2",
+    "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [
         {
             "environment": [
@@ -17,6 +17,7 @@
             "name": "umitoit",
             "image": "984365912870.dkr.ecr.us-east-2.amazonaws.com/umitoit:latest",
             "memory": 128,
+            "essential": true,
             "portMappings": [
                 {
                     "hostPort": 80,
