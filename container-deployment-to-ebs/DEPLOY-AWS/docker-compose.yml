@@ -1,0 +1,14 @@
+version: '2'
+services:
+  app:
+    image: umitoit/rails-api-example:latest
+    ports:
+      - "80:3000"
+    environment:
+      DB_USER: bloguser
+      DB_NAME: blogapp
+      DB_PASSWORD: blog2020
+      DB_HOST: ""
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: 1
+      SECRET_KEY_BASE: 5156ca5a10c6842c4359d9a78ba14a4ba91cee9394d2e87bb783a0f770469d6afd725d40346d328b705cb2b74ef7de2005701c3449a1dbd1d1bc163ce3b67ec1
